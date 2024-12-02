@@ -58,6 +58,7 @@ export default function Checkout() {
         setSubtotal(0);
         setIva(0);
         setTotal(0);
+        window.location.href = '/';
       }
     } catch (error) {
       console.error('Error finalizing purchase:', error);
