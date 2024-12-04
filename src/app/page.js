@@ -61,8 +61,20 @@ export default function Home() {
       </ProductsGrid>
       <h1 style={{color:"#0174BB", margin:"40px 0 20px 0", textAlign:"center"}}>¿INTERESADO EN PERSONALIZAR TUS PRENDAS?</h1>
       <h1 style={{color:"#5E5E5E", margin:"20px 0", textAlign:"center"}}>Contáctanos aquí</h1>
-      <div style={{height:"400px"}}>
+      <div style={{height:"230px", display:"flex", justifyContent:"center", gap:"40px"}}>
+          <a href="https://www.instagram.com/pegasosport/" target="_blank" style={{border:"2px solid #0174BB",height:"200px", width:"200px", borderRadius:"20px", display:"flex",flexDirection:"column", alignItems:"center", justifyContent:"center", gap:"10px"}}>
+            <Contact src="/image/facebook.png" alt="Logo" />
+            <span style={{color:"#0174BB", fontWeight:"600"}}>Facebook</span>
+          </a>
 
+          <a href="https://www.instagram.com/pegasosport/" target="_blank" style={{border:"2px solid #0174BB",height:"200px", width:"200px", borderRadius:"20px", display:"flex",flexDirection:"column", alignItems:"center", justifyContent:"center", gap:"10px"}}>
+            <Contact src="/image/instagram.png" alt="Logo" />
+            <span style={{color:"#0174BB", fontWeight:"600"}}>instagram</span>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=584143247348&text=Hola%2Cquiero%20m%C3%A1s%20informaci%C3%B3n%20de%20los%20uniformes%20" target="_blank" style={{border:"2px solid #0174BB",height:"200px", width:"200px", borderRadius:"20px", display:"flex",flexDirection:"column", alignItems:"center", justifyContent:"center", gap:"10px"}}>
+            <Contact src="/image/whatsapp.png" alt="Logo" />
+            <span style={{color:"#0174BB", fontWeight:"600"}}>WhatsApp</span>
+          </a>
       </div>
     </HomeContainer>
   );
@@ -84,3 +96,9 @@ const ProductsGrid = styled.div`
 const Logo = styled.img`
   height: 100%;
 `;
+
+const Contact = styled.img`
+  height: 30%;
+  width: 60px
+`;
+
