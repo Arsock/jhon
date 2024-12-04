@@ -29,7 +29,7 @@ const CardContainer = styled.div`
   overflow: hidden;
   cursor: pointer;
   transition: box-shadow 0.2s;
-
+  box-shadow: 0 0px 15px 0 #aaa;
   &:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
@@ -47,7 +47,7 @@ const ProductInfo = styled.div`
 
 const ProductName = styled.h3`
   margin: 0;
-  font-size: 18px;
+  font-size: 15px;
   color: #333;
 `;
 
@@ -61,4 +61,5 @@ const ProductPrice = styled.p`
   margin: 8px 0;
   font-size: 16px;
   color: #007bff;
+  font-weight:600;
 `;

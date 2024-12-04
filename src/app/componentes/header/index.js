@@ -31,11 +31,7 @@ const HeaderMain = () => {
 
   return (
     <HeaderContainer>
-      <Logo src="/path/to/your/logo.png" alt="Logo" />
-      <SearchContainer>
-        <SearchInput type="text" placeholder="Buscar..." />
-        <SearchButton>Buscar</SearchButton>
-      </SearchContainer>
+      <Logo src="/image/logo.png" alt="Logo" />
       <NavLinks>
         <NavLink href="/">Inicio</NavLink>
         <NavLink href="/contact">Contacto</NavLink>
@@ -55,7 +51,6 @@ const HeaderMain = () => {
           </>
         )}
       </NavLinks>
-      <ShowCookieButton onClick={showCookie}>Mostrar Cookie</ShowCookieButton>
     </HeaderContainer>
   );
 };
@@ -69,7 +64,6 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   padding: 10px 20px;
   background-color: #f8f9fa;
-  border-bottom: 1px solid #e0e0e0;
 `;
 
 const Logo = styled.img`
@@ -103,23 +97,28 @@ const SearchButton = styled.button`
 const NavLinks = styled.nav`
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
 `;
 
 const NavLink = styled.a`
   text-decoration: none;
-  color: #007bff;
+  font-weight:600;
+  color: #0086D7;
   &:hover {
     color: #0056b3;
   }
 `;
 
 const NavButton = styled.a`
+  display: flex;
+  align-items: center;
   padding: 5px 10px;
+  height:40px;
   border: none;
-  background-color: #28a745;
+  background-color: #0086D7;
   color: white;
-  border-radius: 3px;
+  border-radius: 10px;
+  font-weight:600;
   text-decoration: none;
   &:hover {
     background-color: #218838;
@@ -127,7 +126,7 @@ const NavButton = styled.a`
 `;
 
 const UserButton = styled.button`
-  padding: 5px 10px;
+  padding: 10px 20px;
   border: none;
   background-color: #17a2b8;
   color: white;
