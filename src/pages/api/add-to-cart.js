@@ -15,10 +15,10 @@ export default async function handler(req, res) {
   try {
     const decoded = jwt.verify(token, SECRET_KEY);
 
-    const { productId, quantity } = req.body;
+    const { productId, quantity, size } = req.body;
 
-    if (!productId || !quantity) {
-      return res.status(400).json({ error: 'Product ID and quantity are required' });
+    if (!productId || !quantity || !size) {
+      return res.status(400).json({ error: 'Product ID, quantity, and size are required' });
     }
 
     const db = await openDb();
@@ -26,8 +26,8 @@ export default async function handler(req, res) {
     const product = await db.get('SELECT nombre, imagen FROM productos WHERE id = ?', [productId]);
 
     await db.run(
-      'INSERT INTO carrito (idUser, idProducto, nombreProducto, imagen, cantidad) VALUES (?, ?, ?, ?, ?)',
-      [decoded.id, productId, product.nombre, product.imagen, quantity]
+      'INSERT INTO carrito (idUser, idProducto, nombreProducto, imagen, cantidad, talla) VALUES (?, ?, ?, ?, ?, ?)',
+      [decoded.id, productId, product.nombre, product.imagen, quantity, size]
     );
 
     res.status(200).json({ message: 'Producto agregado al carrito' });

@@ -45,6 +45,7 @@ export async function setupDb() {
       nombreProducto TEXT,
       imagen TEXT,
       cantidad TEXT,
+      talla TEXT,
       FOREIGN KEY (idUser) REFERENCES users(id),
       FOREIGN KEY (idProducto) REFERENCES productos(id)
     );
@@ -59,7 +60,7 @@ export async function setupDb() {
       estado TEXT,
       metodoPago TEXT,
       entrega TEXT,
-      total TEXT
+      total REAL
     );
   `);
 

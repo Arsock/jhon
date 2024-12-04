@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import HeaderMain from '../componentes/header';
 
 const IVA_RATE = 0.16;
 
@@ -60,6 +61,8 @@ export default function Carrito() {
   };
 
   return (
+  <div>
+    <HeaderMain/>
     <CarritoContainer>
       <Title>Carrito de Compras</Title>
       <ContentContainer>
@@ -94,6 +97,7 @@ export default function Carrito() {
         </SummaryContainer>
       </ContentContainer>
     </CarritoContainer>
+    </div>
   );
 }
 
@@ -105,6 +109,7 @@ const CarritoContainer = styled.div`
 
 const Title = styled.h1`
   margin-bottom: 20px;
+  color: #0174BB;
 `;
 
 const ContentContainer = styled.div`
@@ -196,14 +201,15 @@ const SummaryValue = styled.p`
 `;
 
 const CheckoutButton = styled.button`
+  width:65%;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #28a745;
+  background-color: #0174BB;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   &:hover {
-    background-color: #218838;
+    background-color: #078DDF;
   }
 `;

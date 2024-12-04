@@ -12,7 +12,10 @@ export default async function handler(req, res) {
       const user = await db.get(`SELECT * FROM users WHERE email = ? AND clave = ?`, [email, clave]);
       
       if (user) {
-        const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
+        // Verifica que el campo 'rol' esté correctamente recuperado
+        console.log('Rol del usuario:', user.rol);
+
+        const token = jwt.sign({ id: user.id, email: user.email, role: user.rol }, SECRET_KEY, { expiresIn: '1h' });
         res.setHeader('Set-Cookie', cookie.serialize('token', token, {
           httpOnly: true,
           secure: process.env.NODE_ENV !== 'development',

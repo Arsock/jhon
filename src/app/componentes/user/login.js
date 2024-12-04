@@ -30,30 +30,37 @@ function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Email:</label>
+    <div style={{display:"flex", justifyContent:"center", margin:"20px 0 0 0"}}>
+    <form onSubmit={handleSubmit} style={{ borderRadius:"10px", height:"400px", display:"flex", flexDirection:"column", width:"500px", padding:"20px", gap:"30px", border:"2px solid #0174BB"}}>
+      <h1 style={{color:"#0174BB"}}>Inicio de sesión</h1>
+      <div style={{display:"flex", flexDirection:"column"}}>
+        <label style={{fontSize:"18px"}}>Correo electrónico*</label>
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
           required
+          style={{fontSize:"17px", padding:"10px 10px", outline:"none", borderRadius:"5px", border:"none", border:"1px solid #0174BB", background:"#eee"}}
         />
       </div>
-      <div>
-        <label>Clave:</label>
+      <div style={{display:"flex", flexDirection:"column"}}>
+        <label style={{fontSize:"18px"}}>Contraseña</label>
         <input
           type="password"
           name="clave"
           value={formData.clave}
           onChange={handleChange}
           required
+          style={{fontSize:"17px", padding:"10px 10px", outline:"none", borderRadius:"5px", border:"none", border:"1px solid #0174BB", background:"#eee"}}
         />
-      </div>
-      <button type="submit">Iniciar Sesión</button>
+        </div>
+      <button type="submit"
+      style={{fontSize:"17px", padding:"10px 10px", outline:"none", borderRadius:"5px", border:"none", cursor:"pointer", background:"#0174BB", color:"#fff"}}
+      >Iniciar Sesión</button>
       {message && <p>{message}</p>}
     </form>
+    </div>
   );
 }
 

@@ -59,10 +59,10 @@ export default function Home() {
           <ProductCard key={product.id} product={product} />
         ))}
       </ProductsGrid>
-      <h1 style={{color:"#0174BB", margin:"40px 0 20px 0", textAlign:"center"}}>¿INTERESADO EN PERSONALIZAR TUS PRENDAS?</h1>
+      <h1 id="contact" style={{color:"#0174BB", margin:"40px 0 20px 0", textAlign:"center"}}>¿INTERESADO EN PERSONALIZAR TUS PRENDAS?</h1>
       <h1 style={{color:"#5E5E5E", margin:"20px 0", textAlign:"center"}}>Contáctanos aquí</h1>
       <div style={{height:"230px", display:"flex", justifyContent:"center", gap:"40px"}}>
-          <a href="https://www.instagram.com/pegasosport/" target="_blank" style={{border:"2px solid #0174BB",height:"200px", width:"200px", borderRadius:"20px", display:"flex",flexDirection:"column", alignItems:"center", justifyContent:"center", gap:"10px"}}>
+          <a href="hhttps://www.facebook.com/profile.php?id=100067618893287" target="_blank" style={{border:"2px solid #0174BB",height:"200px", width:"200px", borderRadius:"20px", display:"flex",flexDirection:"column", alignItems:"center", justifyContent:"center", gap:"10px"}}>
             <Contact src="/image/facebook.png" alt="Logo" />
             <span style={{color:"#0174BB", fontWeight:"600"}}>Facebook</span>
           </a>

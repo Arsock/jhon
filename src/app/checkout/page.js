@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import HeaderMain from '../componentes/header';
 
 const IVA_RATE = 0.16;
 
@@ -66,6 +67,8 @@ export default function Checkout() {
   };
 
   return (
+    <div>
+      <HeaderMain />
     <CheckoutContainer>
       <Title>Finalizar Compra</Title>
       <ContentContainer>
@@ -80,9 +83,9 @@ export default function Checkout() {
                 value="Pago Móvil" 
                 onChange={() => handlePaymentMethodChange('Pago Móvil')}
               />
-              <label htmlFor="pagoMovil">
+              <label htmlFor="pagoMovil" style={{fontSize:"20px", display:"flex",alignItems:"center", gap:"10px"}}>
+                <PaymentImage src="/image/pago.png" alt="Pago Móvil" />
                 Pago Móvil
-                <PaymentImage src="/path/to/pago-movil.png" alt="Pago Móvil" />
               </label>
             </PaymentOption>
             <PaymentOption>
@@ -92,10 +95,12 @@ export default function Checkout() {
                 name="paymentMethod" 
                 value="Efectivo" 
                 onChange={() => handlePaymentMethodChange('Efectivo')}
+                
               />
-              <label htmlFor="efectivo">
+              <label htmlFor="efectivo" style={{fontSize:"20px", display:"flex",alignItems:"center", gap:"10px"}}>
+                
+                <PaymentImage src="/image/efectivo.png" alt="Efectivo" />
                 Efectivo
-                <PaymentImage src="/path/to/efectivo.png" alt="Efectivo" />
               </label>
             </PaymentOption>
           </PaymentOptions>
@@ -106,9 +111,9 @@ export default function Checkout() {
             value={deliveryInfo} 
             onChange={handleDeliveryInfoChange}
           />
-          <SectionTitle>Contacto</SectionTitle>
-          <ContactButton href="https://wa.me/tu-numero" target="_blank">
-            <WhatsAppImage src="/path/to/whatsapp.png" alt="WhatsApp" />
+          <SectionTitle>Contacto directo</SectionTitle>
+          <ContactButton href="https://api.whatsapp.com/send?phone=584143247348&text=Hola%2Cquiero%20m%C3%A1s%20informaci%C3%B3n%20de%20los%20uniformes%20" target="_blank">
+            <WhatsAppImage src="/image/whatsapp.png" alt="WhatsApp" />
             Contactar por WhatsApp
           </ContactButton>
           <FinalizarButton onClick={handleFinalizarCompra}>Finalizar Compra</FinalizarButton>
@@ -129,6 +134,7 @@ export default function Checkout() {
         </OrderSummary>
       </ContentContainer>
     </CheckoutContainer>
+    </div>
   );
 }
 
@@ -158,22 +164,28 @@ const PaymentAndDelivery = styled.div`
 
 const SectionTitle = styled.h2`
   margin-bottom: 10px;
+  text-align: start;
 `;
 
 const PaymentOptions = styled.div`
   display: flex;
-  flex-direction: column;
   gap: 10px;
 `;
 
 const PaymentOption = styled.div`
   display: flex;
+  gap: 10px;
   align-items: center;
+  border: 2px solid #0174BB;
+  width: 400px;
+  padding:15px;
+  color: #727272;
+  border-radius: 10px
 `;
 
 const PaymentImage = styled.img`
-  width: 50px;
-  height: 50px;
+  width: auto;
+  height: 40px;
   margin-left: 10px;
 `;
 
@@ -187,17 +199,17 @@ const DeliveryInput = styled.input`
 
 const ContactButton = styled.a`
   display: flex;
+  width:300px;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #25d366;
-  color: white;
+  padding: 20px 20px;
+  
+  color: #727272;
   border: none;
   border-radius: 5px;
   text-decoration: none;
+  border: 2px solid #0174BB;
   cursor: pointer;
-  &:hover {
-    background-color: #1ebe5b;
-  }
+
 `;
 
 const WhatsAppImage = styled.img`
@@ -207,14 +219,16 @@ const WhatsAppImage = styled.img`
 `;
 
 const FinalizarButton = styled.button`
-  padding: 10px 20px;
-  background-color: #28a745;
+  padding: 20px 20px;
+  background-color: #0174BB;
   color: white;
+  font-size:16px;
+  font-weight: 600;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   &:hover {
-    background-color: #218838;
+    background-color: #098DDE;
   }
 `;
 
